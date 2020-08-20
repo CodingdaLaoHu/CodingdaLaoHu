@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <title>Resuma</title>
+  </head>
+  <body>
+    <div id="parent">
+      <div class="page cover">
+        <div class="top">
+          <div class="top-content">
+            <div class="cover-header">
+              <h1 class="header-chin">简历</h1>
+              <h1 class="header-eng">RESUME</h1>
+            </div>
+          </div>
+        </div>
+        <div class="bot">
+          <div class="bot-content">
+            <div class="bot-img"></div>
+          </div>
+        </div>
+      </div>
+      <div class="page intro">
+        <div class="intro-header">
+          <h1 class="header">基本信息</h1>
+        </div>
+        <div class="intro-content">
+          <div class="personal-info">
+            <div class="personal-detail">
+              <!-- <div class="center-y"> -->
+
+              <ul>
+                <li><h2>个人信息</h2></li>
+                <li>姓名：巫渤 &nbsp; 性别：男</li>
+                <li>年龄：23</li>
+                <li>教育背景：<br />澳大利亚阿德莱德大学大三在读</li>
+                <li>专业：计算机科学</li>
+                <li>微信：da_Lao_Hu</li>
+                <li>邮箱：Wsimon163@163.com</li>
+              </ul>
+              <!-- </div> -->
+            </div>
+            <div class="career-intention">
+              <!-- <div class="center-y"> -->
+
+              <ul>
+                <li><h2>求职意向</h2></li>
+                <li>期望职位：前端开发实习生</li>
+                <li>工作性质：实习</li>
+                <li>入职时间：一周内入职</li>
+                <li>每周工作时间：4天</li>
+                <li>可保证实习时间：4个月以上</li>
+              </ul>
+              <!-- </div> -->
+            </div>
+          </div>
+          <div class="professional-info">
+            <div class="professional-container">
+              <h1>专业技能</h1>
+              <ul>
+                <li>能够使用HTML+CSS还原设计稿，熟悉HTML5新特性及语义化</li>
+                <li>掌握CSS3动画和flex、浮动、响应式等布局方式</li>
+                <li>熟悉CSS预编译语言：sass</li>
+                <li>
+                  熟练掌握元素JavaScript，熟悉原型、闭包、作用域、ajax等，了解jQuery
+                </li>
+                <li>熟悉ES6新特性，能够使用ES6进行开发</li>
+                <li>
+                  熟练使用vue.js，熟悉vue全家桶（vue-router、vuex、axios、vue-cli）
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page project">
+        <div class="project-header">
+          <h1 class="header">项目经验</h1>
+        </div>
+        <div class="project-content">
+          <div class="project-menu">
+            <div id="resume" class="menu-selected">
+              <h1>个人简历</h1>
+            </div>
+            <div id="vueapp">
+              <h1>Vue 移动端app</h1>
+            </div>
+          </div>
+          <div class="project-detail">
+            <div id="resume-detail" class="is-show selected">
+              <h1>个人简历</h1>
+              <div class="project-container">
+                <strong><h2>技术栈：</h2></strong>
+                <p>
+                  HTML、CSS、canvas、响应式布局、原生JavaScript、jQuery、webpack
+                </p>
+                <strong><h2>项目简介：</h2></strong>
+                <p>
+                  使用原生JavaScript进行项目开发，页面总体采用用flex布局，使用@media实现响应式布局分别对应不同的屏幕尺寸改变页面样式。为了防止不同视图窗口页面布局被打乱，使用rem解决多端适配问题。JavaScript监听页面大小，当最大宽度小于414px时根据屏幕大小自动调节字体。使用onmousewheel监听鼠标滚轮事件，根据deltaY判断滚轮滚动方向，每次滚动页面相应地向上或向下滚动一页。
+                </p>
+                <strong><h2>问题解析：</h2></strong>
+                <p>
+                  页面设计之初采用setinterval持续改变scrollTop属性，到达指定位置后clearinterval的方法，实现页面滚动效果。在加入流星背景后页面滚动出现严重的卡顿现象。这是由于setInterval注册的事件回调是每隔一段时间将任务推入事件队列中等待执行，并且JavaScript是单线程的，在一个时间点上只能执行队列里的第一个事件回调。由于项目中setInterval的时间间隔被设置为1ms，setInterval不间断准时地事件队列里推入事件回调，导致事件队列里很可能有大量被推入地事件回调，事件队列中地事件执行出现显著地延迟。
+                </p>
+                <strong><h2>解决办法：</h2></strong>
+                <p>
+                  为了规避大量地setInterval操作，项目中引入了jQuery。使用jQuery的animate实现页面滚动效果。在实际的项目开发中应尽量避免计算量大或触发频繁的setInterval事件。
+                </p>
+              </div>
+            </div>
+            <div id="vueapp-detail" class="is-show">
+              <h1>Vue移动端app</h1>
+              <div class="project-container">
+                <strong><h2>技术栈：</h2></strong>
+                <p>HTML、sass、Vue、vue-router、vue-cli、vuex、Axios、es6</p>
+                <strong><h2>项目简介：</h2></strong>
+                <p>
+                  项目为使用Vue作为主要框架，sass作为css预处理语言,axios请求数据进行开发的移动端app。项目分为电影、音乐与图片三个板块。
+                </p>
+                <ul>
+                  <li>电影：</li>
+                  <p>
+                    电影板块使用Axios请求豆瓣电影api获取电影数据，使用懒加载技术优先加载可视区域内容，提高用户体验，减轻服务器压力。window.onscroll监听滚动条位置若滚动条到底，则加载loading图片并发送axios请求，数据加载完成后隐藏加载图片，展示显示电影数据。
+                  </p>
+                  <li>音乐：</li>
+                  <p>
+                    音乐板块由于没有可用的音乐数据api，自行整理了一些音乐储存于json文件中，并使用axios请求json文件。使用HTML5新标签audio实现音乐播放器。使用正则表达式从lrc歌词文件中解析并将时间与其对应的歌词分割。将时间与audio的currentTime属性相匹配实现歌词滚动播放效果。
+                  </p>
+                  <li>图片：</li>
+                  <p>
+                    图片板块使用"https://picsum.photos/"获取随即图片。使用$store.commit将数据储存于Vuex
+                    store中。通过@click为图片绑定点击事件跳转值详细页面，并通过url传参将当前点击图片的索引传输给详细图片页面。通过索引在Vuex中查找相应的图片即可在详细图片页面中显示大图。使用vue-touch插件为详细图片页面绑定事件：左滑动显示下一张图片，右滑动显示上一张图片，点击返回图片主界面。
+                  </p>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mask">
+      <canvas id="meteor"></canvas>
+    </div>
+    <script src="./js/stardraw.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/scroll.js"></script>
+    <script>
+      // window.onresize = function () {
+      //   starPosition();
+      //   init();
+      //   viewHeight = document.body.clientHeight;
+      //   let maxHeight = parent.scrollHeight;
+      //   let maxPage = Math.round(maxHeight / viewHeight);
+      // };
+      let resumeTitle = $("#resume");
+      let vueAppTitle = $("#vueapp");
+      let resumeDetail = $("#resume-detail");
+      let vueappDetail = $("#vueapp-detail");
+      function switchTitle() {
+        resumeTitle.removeClass("menu-selected");
+        vueAppTitle.removeClass("menu-selected");
+        resumeDetail.removeClass("selected");
+        vueappDetail.removeClass("selected");
+        $(this).addClass("menu-selected");
+        if (resumeTitle.hasClass("menu-selected")) {
+          resumeDetail.addClass("selected");
+        } else {
+          vueappDetail.addClass("selected");
+        }
+      }
+      resumeTitle.on("click", switchTitle);
+      vueAppTitle.on("click", switchTitle);
+
+      (function (doc) {
+        var init = function () {
+          setSize();
+          bindEvent();
+        };
+
+        function bindEvent() {
+          window.addEventListener("resize", setSize, false);
+        }
+        function setSize() {
+          var cWidth = doc.documentElement.clientWidth;
+          if (cWidth <= 414) {
+            doc.documentElement.style.fontSize = cWidth / 37.5 + "px";
+          } else {
+            let fontSize = doc.documentElement.style.fontSize;
+            if (fontSize != "62.5%") {
+              doc.documentElement.style.fontSize = "62.5%";
+            }
+          }
+        }
+        init();
+      })(document);
+    </script>
+  </body>
+</html>
