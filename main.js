@@ -58,6 +58,34 @@ window.eventDefault = function (e) {
 };
 parent.addEventListener("touchmove", eventDefault, false);
 parent.addEventListener("mousewheel", eventDefault, false);
+projectDetail.addEventListener(
+  "mouseover",
+  function () {
+    parent.removeEventListener("mousewheel", eventDefault, false);
+  },
+  false
+);
+projectDetail.addEventListener(
+  "mouseout",
+  function () {
+    parent.addEventListener("mousewheel", eventDefault, false);
+  },
+  false
+);
+projectDetail.addEventListener(
+  "touchstart",
+  function () {
+    parent.removeEventListener("touchmove", eventDefault, false);
+  },
+  false
+);
+projectDetail.addEventListener(
+  "touchend",
+  function () {
+    parent.addEventListener("touchmove", eventDefault, false);
+  },
+  false
+);
 
 function stopProp(e) {
   e = e || window.event;
