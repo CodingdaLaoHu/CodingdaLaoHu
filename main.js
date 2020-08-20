@@ -52,6 +52,12 @@ let viewHeight = document.body.clientHeight;
 var parent = document.getElementById("parent");
 var projectDetail = document.querySelector(".project-detail");
 
+window.eventDefault = function (e) {
+  e = e || window.event;
+  e.preventDefault();
+};
+parent.addEventListener("touchmove", eventDefault, false);
+
 function stopProp(e) {
   e = e || window.event;
   if (projectDetail.scrollTop != 0) {
