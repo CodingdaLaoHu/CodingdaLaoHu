@@ -57,6 +57,7 @@ window.eventDefault = function (e) {
   e.preventDefault();
 };
 parent.addEventListener("touchmove", eventDefault, false);
+parent.addEventListener("mousewheel", eventDefault, false);
 
 function stopProp(e) {
   e = e || window.event;
