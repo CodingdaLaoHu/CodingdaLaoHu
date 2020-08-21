@@ -2,8 +2,8 @@ window.onresize = function () {
   starPosition();
   init();
   viewHeight = document.body.clientHeight;
-  let maxHeight = parent.scrollHeight;
-  let maxPage = Math.round(maxHeight / viewHeight);
+  maxHeight = parent.scrollHeight;
+  maxPage = Math.round(maxHeight / viewHeight);
 };
 let resumeTitle = $("#resume");
 let vueAppTitle = $("#vueapp");
