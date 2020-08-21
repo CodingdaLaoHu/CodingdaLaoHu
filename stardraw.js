@@ -33,40 +33,44 @@ function MeteorRain() {
   this.speed = Math.ceil(Math.random() + 0.5);
   this.shifting_x = this.speed * this.cos;
   this.shiftion_y = this.speed * this.sin;
-  this.coutPos = function () {
-    this.x = this.x - this.shifting_x;
-    this.y = this.y + this.shiftion_y;
-  };
-  this.draw = function () {
-    context.save();
-    context.beginPath();
-    context.innerWidth = 1;
-    context.globalAlpha = this.alpha;
-    var line = context.createLinearGradient(
-      this.x,
-      this.y,
-      this.x + this.width,
-      this.y - this.height
-    );
-    line.addColorStop(0, "white");
-    line.addColorStop(0.5, "grey");
-    line.addColorStop(1.0, "black");
-    context.strokeStyle = line;
-    context.moveTo(this.x, this.y);
-    context.lineTo(this.x + this.width, this.y - this.height);
-    context.closePath();
-    context.stroke();
-    context.restore();
-  };
-  this.move = function () {
-    var x = this.x + this.width - this.shifting_x;
-    var y = this.y - this.height + this.shiftion_y;
-    context.clearRect(x - 3, y - 3, this.shifting_x + 5, this.shiftion_y + 5);
-    this.coutPos();
-    this.alpha -= 0.02;
-    this.draw();
-  };
 }
+
+MeteorRain.prototype.coutPos = function () {
+  this.x = this.x - this.shifting_x;
+  this.y = this.y + this.shiftion_y;
+};
+
+MeteorRain.prototype.draw = function () {
+  context.save();
+  context.beginPath();
+  context.innerWidth = 1;
+  context.globalAlpha = this.alpha;
+  var line = context.createLinearGradient(
+    this.x,
+    this.y,
+    this.x + this.width,
+    this.y - this.height
+  );
+  line.addColorStop(0, "white");
+  line.addColorStop(0.5, "grey");
+  line.addColorStop(1.0, "black");
+  context.strokeStyle = line;
+  context.moveTo(this.x, this.y);
+  context.lineTo(this.x + this.width, this.y - this.height);
+  context.closePath();
+  context.stroke();
+  context.restore();
+};
+
+MeteorRain.prototype.move = function () {
+  var x = this.x + this.width - this.shifting_x;
+  var y = this.y - this.height + this.shiftion_y;
+  context.clearRect(x - 3, y - 3, this.shifting_x + 5, this.shiftion_y + 5);
+  this.coutPos();
+  this.alpha -= 0.02;
+  this.draw();
+};
+
 function playRains() {
   for (var i = 0; i < rainCount; i++) {
     var rain = rains[i];
